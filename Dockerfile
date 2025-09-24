@@ -5,6 +5,8 @@ RUN apk add --no-cache make build-base libpcap-dev openssh-client tcpdump
 WORKDIR /app
 COPY . /app
 
+ENV GOTOOLCHAIN=auto
+
 RUN go mod download
 RUN go build .
 
